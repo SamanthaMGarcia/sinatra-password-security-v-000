@@ -1,3 +1,3 @@
-class CreateUsers < ActiveRecord::Migration[5.1]
-  has_secure_password
+class User < ActiveRecord::Base
+	has_secure_password
 end
