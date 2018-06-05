@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
 
 	post "/login" do
     user = User.find_by(:username => params[:username])
- 
+
     if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect "/success"
@@ -40,7 +40,7 @@ class ApplicationController < Sinatra::Base
         redirect "/failure"
     end
 	end
-	
+
 	get "/success" do
 		if logged_in?
 			erb :success
